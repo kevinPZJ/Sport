@@ -1,0 +1,82 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="title_margin">20dp</dimen>
+
+    <!-- 文字大小 -->
+
+    <dimen name="spinner_padding">4dp</dimen>
+
+    <dimen name="edittext_drawable_margin">4dp</dimen>
+
+    <dimen name="listview_margin">8dp</dimen>
+
+    <dimen name="text_size_body_1">@dimen/abc_text_size_body_1_material</dimen>
+    <dimen name="text_size_body_2">@dimen/abc_text_size_body_2_material</dimen>
+    <dimen name="text_size_caption">@dimen/abc_text_size_caption_material</dimen>
+    <dimen name="text_size_display_1">@dimen/abc_text_size_display_1_material</dimen>
+    <dimen name="text_size_display_2">@dimen/abc_text_size_display_2_material</dimen>
+    <dimen name="text_size_display_3">@dimen/abc_text_size_display_3_material</dimen>
+    <dimen name="text_size_display_4">@dimen/abc_text_size_display_4_material</dimen>
+    <dimen name="text_size_headline">@dimen/abc_text_size_headline_material</dimen>
+    <dimen name="text_size_large">@dimen/abc_text_size_large_material</dimen>
+    <dimen name="text_size_medium">@dimen/abc_text_size_medium_material</dimen>
+    <dimen name="text_size_menu">@dimen/abc_text_size_menu_material</dimen>
+    <dimen name="text_size_subhead">@dimen/abc_text_size_subhead_material</dimen>
+    <dimen name="text_size_subtitle">@dimen/abc_text_size_subtitle_material_toolbar</dimen>
+    <dimen name="text_size_title_toolbar">@dimen/abc_text_size_title_material_toolbar</dimen>
+
+    <dimen name="text_size_title">17sp</dimen>
+    <dimen name="text_size_big">23sp</dimen>
+    <dimen name="text_size_middle">15sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">13sp</dimen>
+
+    <dimen name="text_size_item_title">@dimen/text_size_middle</dimen>
+    <dimen name="text_size_content_title">@dimen/text_size_big</dimen>
+    <dimen name="text_size_content">@dimen/text_size_small</dimen>
+    <dimen name="text_size_input">@dimen/text_size_middle</dimen>
+    <dimen name="text_size_button">@dimen/text_size_middle</dimen>
+    <dimen name="text_size_tab_button">10sp</dimen>
+
+
+    <dimen name="button_size_height">46dp</dimen>
+    <dimen name="button_size_width">260dp</dimen>
+
+    <!-- 主页 -->
+    <dimen name="main_edittext_height">42dp</dimen>
+    <dimen name="main_edittext_margin_bottom">11dp</dimen>
+    <dimen name="main_margin_left">11dp</dimen>
+    <dimen name="main_margin_right">11dp</dimen>
+    <dimen name="main_collect_title_height">27dp</dimen>
+    <dimen name="collect_item_direction_size">12dp</dimen>
+    <dimen name="main_img_height">182dp</dimen>
+
+    <!-- 登录 -->
+    <dimen name="login_img_width">212dp</dimen>
+    <dimen name="login_img_height">106dp</dimen>
+    <dimen name="login_button_height">44dp</dimen>
+    <dimen name="login_button_width">261dp</dimen>
+    <dimen name="login_margin_top">15dp</dimen>
+
+    <!-- 注册 -->
+    <dimen name="register_button_height">44dp</dimen>
+    <dimen name="register_button_width">261dp</dimen>
+    <dimen name="register_margin_top">15dp</dimen>
+    <dimen name="register_img_width">125dp</dimen>
+    <dimen name="register_img_height">188dp</dimen>
+    <dimen name="register_text_title">23dp</dimen>
+    <dimen name="register_jifen_width">106dp</dimen>
+    <dimen name="register_jifen_height">31dp</dimen>
+
+    <!-- 忘记密码 -->
+    <dimen name="forget_button_height">44dp</dimen>
+    <dimen name="forget_button_width">261dp</dimen>
+    <dimen name="forget_margin_top">15dp</dimen>
+
+</resources>

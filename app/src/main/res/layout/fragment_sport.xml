@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#a8b7c1"
+   >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.example.kevin.health.Ui.Step.StepView
+        android:layout_gravity="center"
+        android:background="#212528"
+        android:id="@+id/sv_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.20" />
+    <EditText
+        android:visibility="gone"
+        android:text="6000"
+        android:id="@+id/et_max"
+        android:hint="设置目标步数，默认为6000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <SeekBar
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:id="@+id/seekBar"
+        android:max="20000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>
+    <LinearLayout
+
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center_vertical"
+                     android:layout_centerVertical="true"
+                    android:drawableLeft="@mipmap/icon_warning_error"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="未连接蓝牙"
+                    android:textSize="@dimen/text_size_button"/>
+                <Button
+                    android:background="@drawable/bottom_dialog_bottom_radius"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="12dp"
+                    android:text="未开启 "
+                    android:textSize="@dimen/text_size_body_1"/>
+                    </RelativeLayout>
+
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+    <LinearLayout
+
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:minHeight="50dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="未绑定设备"
+                android:gravity="center_vertical"
+                android:drawableLeft="@mipmap/icon_status_nodevice"
+                android:textSize="@dimen/text_size_button"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+    <LinearLayout
+
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="体重 70KG"
+                android:textSize="@dimen/text_size_button"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+    <LinearLayout
+        android:minHeight="50dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:minHeight="50dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="近7天睡眠质量"
+                android:textSize="@dimen/text_size_button"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+    <LinearLayout
+        android:minHeight="50dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="未连接蓝牙"
+                android:textSize="@dimen/text_size_button"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+</LinearLayout>
