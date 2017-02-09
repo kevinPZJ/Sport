@@ -10,20 +10,20 @@ import android.widget.FrameLayout;
 
 
 import com.example.kevin.health.R;
-import com.example.kevin.health.Ui.Fun.FunFragment;
+import com.example.kevin.health.Ui.Smart.SmartFragment;
 import com.example.kevin.health.Ui.Health.HealFragment;
 import com.example.kevin.health.Ui.Personal.PersonalFragment;
 import com.example.kevin.health.Ui.Sport.SportFragment;
 import com.example.kevin.health.Ui.internal.ToolbarDelegate;
-import com.example.kevin.health.Utils.UIUtils;
+
 import com.example.kevin.health.base.BaseActivity;
 
-import static android.support.v7.appcompat.R.attr.actionBarSize;
+
 
 public class MainActivity extends BaseActivity {
     private FrameLayout frameLayout;
     private SportFragment sportFragment;
-    private FunFragment funFragment;
+    private SmartFragment smartFragment;
     private PersonalFragment personalFragment;
     private HealFragment healFragment;
 
@@ -86,12 +86,12 @@ public class MainActivity extends BaseActivity {
                         setTitle("健康");
                         break;
                     case 2:
-                        if (funFragment ==null){
-                            funFragment = FunFragment.newInstance();
+                        if (smartFragment ==null){
+                            smartFragment = SmartFragment.newInstance();
                         }
-                        selectfragment=funFragment;
+                        selectfragment= smartFragment;
                         showToolbar();
-                        setTitle("发现");
+                        setTitle("智玩");
                         break;
                     case 3:
                         if (personalFragment==null){
