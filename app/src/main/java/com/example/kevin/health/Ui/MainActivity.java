@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
         final TabLayout tabLayout= (TabLayout) findViewById(R.id.main_tabLayout);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_launcher).setText("运动"),false);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_launcher).setText("健康"),true);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_launcher).setText("发现"),false);
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_launcher).setText("智玩"),false);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.mipmap.ic_launcher).setText("我的"),false);
 
 

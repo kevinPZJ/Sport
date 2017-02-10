@@ -20,11 +20,18 @@ public final class PersonalPresenter implements PersonalContract.Presenter {
     @Override
     public void start() {
 
+        getUserDate();
+
     }
+
 
     @Override
     public void detachView() {
 
     }
+
+    private void getUserDate() {
+    }
+
 }
 

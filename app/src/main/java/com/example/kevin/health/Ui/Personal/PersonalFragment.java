@@ -1,5 +1,6 @@
 package com.example.kevin.health.Ui.Personal;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -45,6 +46,21 @@ public class PersonalFragment extends BaseFragment implements PersonalContract.V
         presenter = new PersonalPresenter(this);
 
         presenter.start();
+
+    }
+
+    @Override
+    public void setHeadImage(Bitmap bitmap) {
+
+    }
+
+    @Override
+    public void setSport_goal() {
+
+    }
+
+    @Override
+    public void setWeight_goal() {
 
     }
 }

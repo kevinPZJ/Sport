@@ -9,22 +9,28 @@
     <include layout="@layout/app_bar_layout"/>
 
     <FrameLayout
-        android:id="@+id/FrameLayout"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
-    </FrameLayout>
+
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
-
         android:gravity="center"
         >
+        <FrameLayout
+            android:id="@+id/FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </FrameLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -36,10 +42,10 @@
             android:id="@+id/main_tabLayout"
             style="@style/MyCustomTabLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             app:tabTextColor="@color/tips_black_color"
             app:tabSelectedTextColor="@color/background_green"/>
         </LinearLayout>
-
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

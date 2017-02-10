@@ -124,7 +124,7 @@ public class StepView  extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height = MeasureSpec.getSize(heightMeasureSpec) / 2;
+        int height =( MeasureSpec.getSize(heightMeasureSpec) / 3)+120 ;
         setMeasuredDimension(width, height);
     }
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#a8b7c1"
+    android:background="#212528"
    >
 
 <LinearLayout
@@ -18,8 +18,7 @@
         android:background="#212528"
         android:id="@+id/sv_step"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.20" />
+        android:layout_height="wrap_content" />
 
     <EditText
         android:visibility="gone"
@@ -38,12 +37,26 @@
         android:layout_height="wrap_content"
         />
 </LinearLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:clickable="false">
     <LinearLayout
 
-        android:background="#ffffff"
+        android:background="@drawable/item_selector"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        >
 
             <RelativeLayout
                 android:minHeight="50dp"
@@ -61,14 +74,16 @@
                     android:text="未连接蓝牙"
                     android:textSize="@dimen/text_size_button"/>
                 <Button
-                    android:background="@drawable/bottom_dialog_bottom_radius"
+                    android:layout_marginTop="10dp"
+
+                    android:id="@+id/btn_device_status"
+                    android:background="@drawable/parcel_button_bg"
                     android:layout_alignParentRight="true"
-                    android:textColor="@color/black"
+                    android:textColor="@color/txt_black_color"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="12dp"
+                    android:layout_height="30dp"
                     android:text="未开启 "
-                    android:textSize="@dimen/text_size_body_1"/>
+                   />
                     </RelativeLayout>
 
 
@@ -76,16 +91,20 @@
     <View style="@style/line_view_style_landscape"/>
     <LinearLayout
 
-        android:background="#ffffff"
+        android:background="@drawable/item_selector"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clickable="true">
         <LinearLayout
             android:gravity="center_vertical"
             android:minHeight="50dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
             <TextView
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="12dp"
@@ -95,80 +114,148 @@
                 android:text="未绑定设备"
                 android:gravity="center_vertical"
                 android:drawableLeft="@mipmap/icon_status_nodevice"
-                android:textSize="@dimen/text_size_button"/>
+                android:textSize="@dimen/text_size_button"
+                android:id="@+id/textView2" />
 
         </LinearLayout>
-
+        <View style="@style/line_view_style_landscape"/>
 
     </LinearLayout>
-    <View style="@style/line_view_style_landscape"/>
-    <LinearLayout
-
-        android:background="#ffffff"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
-            android:gravity="center_vertical"
-            android:minHeight="50dp"
-            android:orientation="horizontal"
+
+            android:background="@drawable/item_selector"
+            android:clickable="true"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="体重 70KG"
-                android:drawableLeft="@mipmap/icon_status_weight"
-                android:textSize="@dimen/text_size_button"/>
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="心率"
+                    android:drawableRight="@mipmap/default_end_arrow"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@mipmap/icon_status_nodevice"
+                    android:textSize="@dimen/text_size_button"/>
+
+            </LinearLayout>
+
 
         </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+        <LinearLayout
+            android:clickable="true"
+            android:background="@drawable/item_selector"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="体重70KG"
+                    android:drawableRight="@mipmap/default_end_arrow"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@mipmap/icon_status_weightbfs"
+                    android:textSize="@dimen/text_size_button"/>
+
+            </LinearLayout>
 
 
-    </LinearLayout>
+        </LinearLayout>
     <View style="@style/line_view_style_landscape"/>
     <LinearLayout
         android:minHeight="50dp"
-        android:background="#ffffff"
+        android:background="@drawable/item_selector"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <LinearLayout
-            android:gravity="center_vertical"
-            android:minHeight="50dp"
-            android:orientation="horizontal"
+            android:clickable="true"
+            android:background="@drawable/item_selector"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="近7天运动报告"
-                android:drawableLeft="@mipmap/icon_status_steps"
-                android:textSize="@dimen/text_size_button"/>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="近7天运动报告"
+                    android:drawableRight="@mipmap/default_end_arrow"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@mipmap/icon_status_steps"
+                    android:textSize="@dimen/text_size_button"/>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
 
-    </LinearLayout>
+        </LinearLayout>
     <View style="@style/line_view_style_landscape"/>
-    <LinearLayout
-        android:minHeight="50dp"
-        android:background="#ffffff"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <LinearLayout
+            android:clickable="true"
+            android:background="@drawable/item_selector"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:minHeight="50dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="心率"
+                    android:drawableRight="@mipmap/default_end_arrow"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@mipmap/icon_status_nodevice"
+                    android:textSize="@dimen/text_size_button"/>
 
-     
+            </LinearLayout>
 
-    </LinearLayout>
+
+        </LinearLayout>
     <View style="@style/line_view_style_landscape"/>
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

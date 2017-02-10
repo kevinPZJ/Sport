@@ -1,5 +1,7 @@
 package com.example.kevin.health.Ui.Personal;
 
+import android.graphics.Bitmap;
+
 import com.example.kevin.health.base.BaseContract;
 
 /**
@@ -8,6 +10,16 @@ import com.example.kevin.health.base.BaseContract;
 
 public interface PersonalContract  {
     interface View extends BaseContract.BaseView<Presenter>{
+
+
+
+
+        void setHeadImage(Bitmap bitmap);
+
+        void setSport_goal();
+
+        void setWeight_goal();
+
 
 
 

@@ -1,22 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#000000"
+    android:background="#F7F7F7"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View style="@style/line_view_style_landscape"/>
 
 
-
-    <TextView
-        android:layout_centerInParent="true"
+    <LinearLayout
         android:gravity="center"
-        android:id="@+id/tv_sport"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:text="Sport"
-        android:textColor="#ffffff"
-        android:textSize="25dp"/>
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:clickable="false"
+       >
+
+        <LinearLayout
+
+            android:id="@+id/layout_phone_coming"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="5"
+            android:background="@drawable/item_selector"
+            android:clickable="true">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="@null"
+                android:src="@mipmap/incoming_call_alert_icon"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="来电提醒"
+                android:textSize="17sp"
+                android:textColor="@color/text_black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未开启"
+                android:textSize="20sp"
+                android:textColor="@color/text_gray"/>
+
+        </LinearLayout>
+
+        <View
+            android:background="#f2f2f2"
+            android:layout_width="1dp"
+            android:layout_height="140dp"
+            android:layout_weight="0.01"
+            />
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="4.9"
+            android:background="@drawable/item_selector"
+            android:clickable="true">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="@null"
+                android:src="@mipmap/incoming_call_alert_icon"
+              />
 
 
-</android.support.design.widget.CoordinatorLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="来电提醒"
+                android:textSize="17sp"
+                android:textColor="@color/text_black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未开启"
+                android:textSize="20sp"
+                android:textColor="@color/text_gray"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="5"
+            android:background="@drawable/item_selector"
+            android:clickable="true"
+            >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="@null"
+                android:src="@mipmap/incoming_call_alert_icon"
+              />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="来电提醒"
+                android:textSize="17sp"
+                android:textColor="@color/text_black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未开启"
+                android:textSize="20sp"
+                android:textColor="@color/text_gray"/>
+
+        </LinearLayout>
+
+        <View
+            android:background="#f2f2f2"
+            android:layout_width="1dp"
+            android:layout_height="140dp"
+            android:layout_weight="0.01"
+            />
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="4.9"
+            android:background="@drawable/item_selector"
+            android:clickable="true">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="@null"
+                android:src="@mipmap/incoming_call_alert_icon"
+               />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="来电提醒"
+                android:textSize="17sp"
+                android:textColor="@color/text_black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未开启"
+                android:textSize="20sp"
+                android:textColor="@color/text_gray"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View style="@style/line_view_style_landscape"/>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:text="身份"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp" />
+                </LinearLayout>
+                <RelativeLayout
+
+                    android:id="@+id/layout_screen_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/item_selector"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:id="@+id/tv_screen_lock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="未开启"
+                            android:drawableRight="@mipmap/default_end_arrow"
+                            android:textColor="@color/tips_black_color"
+                            android:textSize="@dimen/text_size_button"/>/>
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="屏幕解锁"
+                        android:drawableLeft="@mipmap/icon_screen_unlock"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/txt_black_color"
+                        android:textSize="@dimen/text_size_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/textView" />
+                </RelativeLayout>
+                <View style="@style/line_view_style_landscape"/>
+                <RelativeLayout
+                    android:id="@+id/layout_ble_broadcast"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/item_selector"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center_vertical"
+                        android:text="蓝牙广播"
+                        android:drawableLeft="@mipmap/icon_broadcast"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/txt_black_color"
+                        android:textSize="@dimen/text_size_button"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+
+                            android:id="@+id/tv_ble_broadcast"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="未开启"
+                            android:drawableRight="@mipmap/default_end_arrow"
+                            android:textColor="@color/tips_black_color"
+                            android:textSize="@dimen/text_size_button"/>/>
+                    </LinearLayout>
+                </RelativeLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+                    <TextView
+                        android:text="第三方接入"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_weixin"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/item_selector"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="微信"
+                        android:drawableLeft="@mipmap/icon_weixin"
+                        android:drawableRight="@mipmap/default_end_arrow"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/txt_black_color"
+                        android:textSize="@dimen/text_size_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </LinearLayout>
+                <View style="@style/line_view_style_landscape"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_qq"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/item_selector"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="QQ"
+                        android:drawableLeft="@mipmap/ico_qq"
+                        android:drawableRight="@mipmap/default_end_arrow"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/txt_black_color"
+                        android:textSize="@dimen/text_size_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </LinearLayout>
+
+                <View style="@style/line_view_style_landscape"/>
+                <LinearLayout
+                    android:id="@+id/layout_weibo"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/item_selector"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp">
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="微博"
+                        android:drawableLeft="@mipmap/ico_weibo"
+                        android:drawableRight="@mipmap/default_end_arrow"
+                        android:drawablePadding="5dp"
+                        android:textColor="@color/txt_black_color"
+                        android:textSize="@dimen/text_size_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>
+   </LinearLayout>

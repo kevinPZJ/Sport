@@ -17,12 +17,16 @@ import android.widget.SeekBar;
 
 import com.example.kevin.health.R;
 import com.example.kevin.health.Ui.Step.StepView;
+import com.example.kevin.health.base.BaseFragment;
 
 /**
  * Created by hyx on 2017/2/6.
  */
 
-public class SportFragment extends Fragment {
+public class SportFragment extends BaseFragment implements SportContract.View  {
+
+    private SportContract.Presenter presenter;
+
     private  SeekBar mSeekBar;
     private  StepView stepView;
     private  EditText mEtMax;
@@ -41,20 +45,7 @@ public class SportFragment extends Fragment {
         stepView= (StepView) view.findViewById(R.id.sv_step);
         mSeekBar = (SeekBar)view.findViewById(R.id.seekBar);
         mEtMax = (EditText)view.findViewById(R.id.et_max);
-
-
-
-//       stepView.setColor(Color.parseColor("#00ffff"));
-//
-//        stepView.setBigTextSize(80);//设置总步数的字体大小
-//        stepView.setDotSize(12);
-//        stepView.setSmallTextSize(25);//设置下面的字体大小
-//        stepView.setLineDistance(30);
-//        stepView.setStrokeWidth(1);
-//        stepView.setDotSize(5);//设置小圆点的大小
-
-
-        initStep();
+        showStep();
         
         return view;
     }
@@ -63,11 +54,25 @@ public class SportFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        
+        presenter=new SportPresenter();
+        presenter.start();
        
     }
 
-    private void initStep() {
+
+
+
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+         showStep();
+    }
+
+    @Override
+    public void showStep() {
         stepView.setMaxProgress(8000);//设置每日目标步数
         stepView.setProgress(8888);//每日步数目标
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -117,7 +122,7 @@ public class SportFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -130,13 +135,13 @@ public class SportFragment extends Fragment {
                 });
             }
         }).start();
+
     }
-    
 
     @Override
-    public void onResume() {
-        super.onResume();
-        initStep();
+    public void onDetach() {
+        super.onDetach();
+        presenter.detachView();
     }
 }
 
