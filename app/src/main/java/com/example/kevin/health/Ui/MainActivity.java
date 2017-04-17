@@ -1,11 +1,13 @@
 package com.example.kevin.health.Ui;
 
+import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.widget.FrameLayout;
 
 
@@ -17,7 +19,7 @@ import com.example.kevin.health.Ui.Sport.SportFragment;
 import com.example.kevin.health.Ui.internal.ToolbarDelegate;
 
 import com.example.kevin.health.base.BaseActivity;
-
+import com.ykrank.library.StatusBarUtil;
 
 
 public class MainActivity extends BaseActivity {
@@ -33,6 +35,16 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.colorPrimary),0);
+            StatusBarUtil.StatusBarLightMode(this);
+        } else {
+            StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.colorPrimary),100);
+        }
+        setToolbarBackground(getResources().getColor(R.color.colorPrimary));
+        setToolbarBackIcon(ToolbarDelegate.CLOSE,ToolbarDelegate.COLOR_BLACK);
+
         initView();
         initFragment();
 
