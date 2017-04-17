@@ -90,7 +90,7 @@ public class HealFragment extends Fragment {
                         temp.clear();
                         temp.set(year, monthOfYear, dayOfMonth);
 
-                        Log.e("time",mYear+"年"+(mMonth+1)+"月"+mDay+"日");
+
 
                         //
 
