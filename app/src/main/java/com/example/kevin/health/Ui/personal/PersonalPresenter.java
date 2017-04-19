@@ -1,6 +1,4 @@
-package com.example.kevin.health.Ui.Personal;
-
-import com.example.kevin.health.base.BaseContract;
+package com.example.kevin.health.Ui.personal;
 
 /**
  * Created by hyx on 2017/2/7.

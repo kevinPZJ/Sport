@@ -1,4 +1,4 @@
-package com.example.kevin.health.Ui.Step;
+package com.example.kevin.health.Ui.step;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -124,7 +124,7 @@ public class StepView  extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height =( MeasureSpec.getSize(heightMeasureSpec) / 3)+120 ;
+        int height =( MeasureSpec.getSize(heightMeasureSpec) / 3)+160 ;
         setMeasuredDimension(width, height);
     }
 

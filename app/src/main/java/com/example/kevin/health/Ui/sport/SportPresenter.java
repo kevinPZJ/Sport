@@ -1,4 +1,4 @@
-package com.example.kevin.health.Ui.Sport;
+package com.example.kevin.health.Ui.sport;
 
 /**
  * Created by hyx on 2017/2/9.

@@ -1,4 +1,4 @@
-package com.example.kevin.health.Ui.Smart;
+package com.example.kevin.health.Ui.smart;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

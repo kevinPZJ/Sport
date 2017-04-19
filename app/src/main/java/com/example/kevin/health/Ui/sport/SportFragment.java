@@ -1,11 +1,9 @@
-package com.example.kevin.health.Ui.Sport;
+package com.example.kevin.health.Ui.sport;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -16,7 +14,7 @@ import android.widget.SeekBar;
 
 
 import com.example.kevin.health.R;
-import com.example.kevin.health.Ui.Step.StepView;
+import com.example.kevin.health.Ui.step.StepView;
 import com.example.kevin.health.base.BaseFragment;
 
 /**

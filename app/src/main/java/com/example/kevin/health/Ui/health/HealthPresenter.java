@@ -1,10 +1,12 @@
-package com.example.kevin.health.Ui.Smart;
+package com.example.kevin.health.Ui.health;
+
+
 
 /**
  * Created by hyx on 2017/2/9.
  */
 
-public class SmartPresenter implements SmartContract.Presenter {
+public class HealthPresenter implements HealthContract.Presenter {
 
 
     @Override

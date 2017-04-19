@@ -1,4 +1,4 @@
-package com.example.kevin.health.Ui.Personal;
+package com.example.kevin.health.Ui.personal;
 
 import android.graphics.Bitmap;
 

@@ -13,7 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.example.kevin.health.Ui.Step.StepView
+    <com.example.kevin.health.Ui.step.StepView
         android:layout_gravity="center"
         android:background="#212528"
         android:id="@+id/sv_step"
