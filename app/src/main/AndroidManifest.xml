@@ -31,6 +31,8 @@
 
         <activity android:name=".Ui.heart.HeartActivity"/>
         <activity android:name=".Ui.health.BigImageShowActivity"/>
+        <activity android:name=".ble.DeviceListActivity"/>
+        <service android:name=".ble.UartService" android:enabled="true"/>
 
     </application>
 

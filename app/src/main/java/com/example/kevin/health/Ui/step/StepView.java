@@ -46,6 +46,11 @@ public class StepView  extends View {
     private ValueAnimator resultAnim;
     private float rotateDegree;
 
+    private String format = "0" ;
+    private  int  carol  = 0  ;
+
+
+
     public StepView(Context context) {
         this(context, null);
     }
@@ -180,11 +185,11 @@ public class StepView  extends View {
 
     //计算行走的里程及消耗的卡路里
     private String getStepDistance(int progress) {
-        float distance = progress / 1420f;
-        DecimalFormat decimalFormat = new DecimalFormat("0.0");
-        String format = decimalFormat.format(distance);
-        int carol = (int) (distance * 32.3f);
-        return format + "公里 | " + carol + "千卡";
+//        float distance = progress / 1420f;
+//        DecimalFormat decimalFormat = new DecimalFormat("0.0");
+//        String format = decimalFormat.format(distance);
+
+        return format + "米 | " + carol + "千卡";
     }
 
     //获取字符相对中心向右偏移的量
@@ -387,5 +392,16 @@ public class StepView  extends View {
             secondAnim.cancel();
         }
     }
+
+
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    public void setCarol(int carol) {
+        this.carol = carol;
+    }
+
 }
 

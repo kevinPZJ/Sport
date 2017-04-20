@@ -67,6 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/tv_device_status"
                     android:gravity="center_vertical"
                      android:layout_centerVertical="true"
                     android:drawableLeft="@mipmap/icon_warning_error"
