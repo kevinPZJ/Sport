@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<android.support.design.widget.CoordinatorLayout
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/background_gray"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -69,6 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal"
+                    android:background="@color/background_white"
                     android:weightSum="4">
 
                     <LinearLayout
@@ -128,6 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal"
+                    android:background="@color/background_white"
                     android:weightSum="4">
 
                     <LinearLayout
@@ -151,7 +155,7 @@
                         android:layout_weight="3">
 
                         <lecho.lib.hellocharts.view.ColumnChartView
-                            android:id="@+id/column_chart"
+                            android:id="@+id/distance_column_chart"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
                             android:layout_width="match_parent"
@@ -186,6 +190,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal"
+                    android:background="@color/background_white"
                     android:weightSum="4">
 
                     <LinearLayout
@@ -206,7 +211,15 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
-                        android:background="#29a11b">
+                    >
+
+                        <lecho.lib.hellocharts.view.ColumnChartView
+                            android:id="@+id/cal_column_chart"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+                        </lecho.lib.hellocharts.view.ColumnChartView>
 
                     </LinearLayout>
 
@@ -234,6 +247,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal"
+                    android:background="@color/background_white"
                     android:weightSum="4">
 
                     <LinearLayout
@@ -268,3 +282,4 @@
     </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
+</layout>

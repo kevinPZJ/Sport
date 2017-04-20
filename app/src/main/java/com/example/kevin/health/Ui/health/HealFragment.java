@@ -1,5 +1,6 @@
 package com.example.kevin.health.Ui.health;
 
+import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,9 +15,9 @@ import com.example.kevin.health.Database.HealthData;
 import com.example.kevin.health.R;
 import com.example.kevin.health.Utils.Tools;
 import com.example.kevin.health.base.BaseFragment;
+import com.example.kevin.health.databinding.FragmentHealthBinding;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -35,8 +36,6 @@ import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.ColumnChartView;
 import lecho.lib.hellocharts.view.LineChartView;
-import lecho.lib.hellocharts.view.PreviewColumnChartView;
-import rx.internal.operators.OperatorUnsubscribeOn;
 
 
 /**
@@ -46,36 +45,32 @@ import rx.internal.operators.OperatorUnsubscribeOn;
 public class HealFragment extends BaseFragment implements HealthContract.View{
 
 
-    private List<HealthData> list;
+    private List<HealthData> list; // 数据
 
     private FloatingActionButton fab;
     private LineChartView lineChartStep;
-    private ColumnChartView chart;
+    private ColumnChartView distanceColumnChart;
+    private ColumnChartView calColumnChart;
 
-    private TextView tv_Step;
-    private TextView tv_Distance;
-    private TextView tv_Cal;
-    private TextView tv_SleepHour;
+    private TextView tvStep;
+    private TextView tvDistance;
+    private TextView tvCal;
+    private TextView tvSleepHour;
 
-
-    private ColumnChartView mColumnChartView;
 
     private ColumnChartData data;
     /**
      * Deep copy of data.
      */
-    private ColumnChartData mColumnChartData;
+    private ColumnChartData DistanceColumnChartData;  //  距离的表格数据
+
+    private ColumnChartData CalColumnChartData;  // 热量的表格数据
 
     private String chooseDate;
 
 
 
-
-    private List<PointValue> Step_point = new ArrayList<PointValue>();  //坐标点
     private List<AxisValue>  Step_X = new ArrayList<AxisValue>();   //Step_X坐标
-
-
-
 
 
     private int mYear = Calendar.getInstance().get(Calendar.YEAR);
@@ -92,27 +87,23 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_health, container, false);
-        fab = (FloatingActionButton)view.findViewById(R.id.fab);
-        lineChartStep = (LineChartView)view.findViewById(R.id.line_chart_step);
-        mColumnChartView = (ColumnChartView) view.findViewById(R.id.column_chart);
-        tv_Step= (TextView) view.findViewById( R.id.tv_Step);
-        tv_Distance= (TextView) view.findViewById( R.id.tv_distance);
-        tv_Cal= (TextView) view.findViewById( R.id.tv_Cal);
-        tv_SleepHour= (TextView) view.findViewById( R.id.tv_Sleep);
-
-
-
-        return view;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        FragmentHealthBinding  binding  = DataBindingUtil.inflate(inflater, R.layout.fragment_health,container, false);
+        fab=binding.fab;
+        lineChartStep=binding.lineChartStep;
+        distanceColumnChart=binding.distanceColumnChart;
+        calColumnChart=binding.calColumnChart;
+        tvStep=binding.tvStep;
+        tvDistance=binding.tvDistance;
+        tvCal=binding.tvCal;
+        tvSleepHour=binding.tvSleep;
+        return binding.getRoot();
     }
 
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
 
         list = new ArrayList<>();
         list.add(new HealthData(9, 7841, 324, 4.81, "20170418", 6.6, 6));
@@ -143,7 +134,6 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
                         temp.set(year, monthOfYear, dayOfMonth);
 
                         showToast(year+"年"+(mMonth+1)+"月"+mDay+"日");
-
 
                         String Month = null ;
                         if (mMonth< 10 ){
@@ -190,6 +180,7 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
 
 
         ShowDistance();
+        ShowCal();
 
 
     }
@@ -210,22 +201,15 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
             int cal = list.get(index).getCal();
             int sitHour = list.get(index).getSitHour();
 
-            tv_Step.setText(Step+"");
-            tv_Distance.setText(Distance+"");
-            tv_Cal.setText(cal+"");
-            tv_SleepHour.setText(sitHour+"");
+            tvStep.setText(Step+"");
+            tvDistance.setText(Distance+"");
+            tvCal.setText(cal+"");
+            tvSleepHour.setText(sitHour+"");
         }
 
 
     }
 
-    private void showStep() {
-
-        getAxisXLables();//获取x轴的标注
-        getAxisPoints();//获取坐标点
-        initLineChart();//初始化
-
-    }
 
 
     private void ShowDistance(){
@@ -253,7 +237,7 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
             columns.add(column);
         }
 
-         mColumnChartData = new ColumnChartData(columns);//表格的数据实例
+         DistanceColumnChartData = new ColumnChartData(columns);//表格的数据实例
         if (hasAxes) {
             Axis axisX = new Axis();
             //   axisX.setInside(true);//是否显示在里面，默认为false
@@ -292,22 +276,95 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
 
                 axisY.setName("公里");//设置Y轴的注释
             }
-            mColumnChartData.setAxisXBottom(axisX);//设置X轴显示的位置
-            mColumnChartData.setAxisYLeft(axisY);//设置Y轴显示的位置
+            DistanceColumnChartData.setAxisXBottom(axisX);//设置X轴显示的位置
+            DistanceColumnChartData.setAxisYLeft(axisY);//设置Y轴显示的位置
         } else {
-            mColumnChartData.setAxisXBottom(null);
-            mColumnChartData.setAxisYLeft(null);
+            DistanceColumnChartData.setAxisXBottom(null);
+            DistanceColumnChartData.setAxisYLeft(null);
         }
-        mColumnChartView.setColumnChartData(mColumnChartData);//为View设置数据
+        distanceColumnChart.setColumnChartData(DistanceColumnChartData);//为View设置数据
 
 
+
+    }
+
+
+
+
+    private void ShowCal(){
+        int numSubcolumns = 1;//设置每个柱状图显示的颜色数量(每个柱状图显示多少块)
+
+        int numColumns = 8;//柱状图的数量
+
+
+        List<Column> columns = new ArrayList<Column>();
+        List<SubcolumnValue> values;
+
+        for (int i = 0; i < list.size(); ++i) {
+
+            values = new ArrayList<SubcolumnValue>();
+
+            SubcolumnValue value = new SubcolumnValue(list.get(i).getCal(), ChartUtils.pickColor());//第一个值是数值(值>0 方向朝上，值<0，方向朝下)，第二个值是颜色
+            //    SubcolumnValue value = new SubcolumnValue((float) Math.random() * 50f + 5, Color.parseColor("#00000000"));//第一个值是数值，第二个值是颜色
+            //    values.add(new SubcolumnValue((float) Math.random() * 50f + 5, ChartUtils.pickColor()));
+            values.add(value);
+
+
+            Column column = new Column(values);//一个柱状图的实例
+            column.setHasLabels(hasAxes);//设置是否显示每个柱状图的高度，
+            column.setHasLabelsOnlyForSelected(false);//点击的时候是否显示柱状图的高度，和setHasLabels()和用的时候，setHasLabels()失效
+            columns.add(column);
+        }
+
+        CalColumnChartData = new ColumnChartData(columns);//表格的数据实例
+        if (hasAxes) {
+            Axis axisX = new Axis();
+            //   axisX.setInside(true);//是否显示在里面，默认为false
+            List<AxisValue> axisValues = new ArrayList<AxisValue>();
+            for (int i =0 ; i <list.size();i ++){
+                axisValues.add(new AxisValue(i).setLabel(date(list.get(i).getCreatDate())));
+
+            }
+
+            axisX.setValues(axisValues);
+            Axis axisY = new Axis().setHasLines(true);
+            if (hasAxesNames) {
+
+                axisY.setName("大卡");//设置Y轴的注释
+            }
+            CalColumnChartData.setAxisXBottom(axisX);//设置X轴显示的位置
+            CalColumnChartData.setAxisYLeft(axisY);//设置Y轴显示的位置
+        } else {
+            CalColumnChartData.setAxisXBottom(null);
+            CalColumnChartData.setAxisYLeft(null);
+        }
+        calColumnChart.setColumnChartData(CalColumnChartData);//为View设置数据
 
     }
 
     /**
      * 初始化LineChart的一些设置
      */
-    private void initLineChart(){
+    private void showStep(){
+
+         List<PointValue> Step_point = new ArrayList<PointValue>();
+        //坐标点
+         List<AxisValue>  Step_X = new ArrayList<AxisValue>();                 //Step表格_X轴
+
+        /**
+         * X 轴的显示
+         */
+        for (int i = 0; i < list.size(); i++) {
+            Step_X.add(new AxisValue(i).setLabel(date(list.get(i).getCreatDate())));
+        }
+        /**
+         * 图表的每个点的显示
+         */
+
+        for (int i = 0; i < list.size(); i++) {
+            Step_point.add(new PointValue(i,list.get(i).getStep()));   //图表的每个点的显示
+        }
+
         Line line = new Line(Step_point).setColor(Color.parseColor("#FFCD41"));  //折线的颜色
         List<Line> lines = new ArrayList<Line>();
         line.setShape(ValueShape.CIRCLE);//折线图上每个数据点的形状  这里是圆形 （有三种 ：ValueShape.SQUARE  ValueShape.CIRCLE  ValueShape.SQUARE）
@@ -362,24 +419,8 @@ public class HealFragment extends BaseFragment implements HealthContract.View{
         v.left = 0;
         v.right= 7;
         lineChartStep.setCurrentViewport(v);
-    }
 
 
-    /**
-     * X 轴的显示
-     */
-    private void getAxisXLables(){
-        for (int i = 0; i < list.size(); i++) {
-            Step_X.add(new AxisValue(i).setLabel(date(list.get(i).getCreatDate())));
-        }
-    }
-    /**
-     * 图表的每个点的显示
-     */
-    private void getAxisPoints(){
-        for (int i = 0; i < list.size(); i++) {
-            Step_point.add(new PointValue(i,list.get(i).getStep()));
-        }
     }
 
     private String date(String date){
