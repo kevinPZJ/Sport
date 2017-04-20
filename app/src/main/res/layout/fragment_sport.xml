@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+<LinearLayout
+
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -43,7 +46,7 @@
     <LinearLayout
         android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
 
         android:clickable="false">
@@ -75,7 +78,6 @@
                     android:textSize="@dimen/text_size_button"/>
                 <Button
                     android:layout_marginTop="10dp"
-
                     android:id="@+id/btn_device_status"
                     android:background="@drawable/parcel_button_bg"
                     android:layout_alignParentRight="true"
@@ -258,4 +260,4 @@
     <View style="@style/line_view_style_landscape"/>
     </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
-</LinearLayout>
+</LinearLayout></layout>

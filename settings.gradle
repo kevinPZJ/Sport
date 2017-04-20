@@ -1,1 +1,1 @@
-include ':app', ':stastusBarUtil'
+include ':app', ':stastusBarUtil', ':ahbottomnavigation'

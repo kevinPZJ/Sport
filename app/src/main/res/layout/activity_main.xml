@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+
         android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,25 +32,16 @@
                 <View style="@style/line_view_style_landscape" />
 
 
-                <android.support.design.widget.BottomNavigationView
-                    android:id="@+id/nv_bottom"
+                <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+                    android:id="@+id/bottom_navigation"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="56dp"
                     android:layout_gravity="bottom"
-                    android:background="?android:attr/windowBackground"
-                    app:menu="@menu/navigation" />
-
-                <!--<android.support.design.widget.BottomNavigationView-->
-                <!--android:id="@+id/nv_bottom"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--app:menu="@menu/navigation"/>-->
+                    app:selectedBackgroundVisible="true"/>
 
             </LinearLayout>
         </FrameLayout>
 
 
     </android.support.design.widget.CoordinatorLayout>
-
-
+</layout>

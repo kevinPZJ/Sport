@@ -8,6 +8,9 @@
         <item name="toolbarStyle">@style/myToolbarStyle</item>
         <item name="toolbarNavigationButtonStyle">@style/myToolbarNavigationButtonStyle</item>
         <item name="alertDialogTheme">@style/MyAlertDialogStyle</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
+
 
 </resources>

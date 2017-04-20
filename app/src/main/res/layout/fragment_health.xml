@@ -17,7 +17,6 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_gravity="top|end"
         android:src="@drawable/ic_calendar_white_24dp"
-        app:backgroundTint="@color/colorPrimary"
         app:elevation="4dp"
         app:borderWidth="0dp"/>
 
@@ -26,7 +25,6 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -70,23 +68,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:orientation="horizontal"
                     android:background="@color/background_white"
+                    android:orientation="horizontal"
                     android:weightSum="4">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
                         <TextView
                             android:id="@+id/tv_Step"
-                            android:layout_gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="66"
+                            android:layout_gravity="center"
                             android:gravity="center"
-                            android:textSize="25sp"/>
+                            android:text="66"
+                            android:textSize="25sp" />
 
                     </LinearLayout>
 
@@ -96,12 +95,11 @@
                         android:layout_weight="3">
 
                         <lecho.lib.hellocharts.view.LineChartView
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
                             android:id="@+id/line_chart_step"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
+                            android:layout_height="match_parent"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp" />
 
 
                     </LinearLayout>
@@ -130,23 +128,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:orientation="horizontal"
                     android:background="@color/background_white"
+                    android:orientation="horizontal"
                     android:weightSum="4">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        >
+                        android:layout_weight="1">
+
                         <TextView
                             android:id="@+id/tv_distance"
-                            android:layout_gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="66"
+                            android:layout_gravity="center"
                             android:gravity="center"
-                            android:textSize="25sp"/>
+                            android:text="66"
+                            android:textSize="25sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -156,16 +154,12 @@
 
                         <lecho.lib.hellocharts.view.ColumnChartView
                             android:id="@+id/distance_column_chart"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" >
-                        </lecho.lib.hellocharts.view.ColumnChartView>
+                            android:layout_height="match_parent"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"></lecho.lib.hellocharts.view.ColumnChartView>
 
                     </LinearLayout>
-
-
-
 
 
                 </LinearLayout>
@@ -189,37 +183,36 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:orientation="horizontal"
                     android:background="@color/background_white"
+                    android:orientation="horizontal"
                     android:weightSum="4">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
                             android:id="@+id/tv_Cal"
-                            android:layout_gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="66"
+                            android:layout_gravity="center"
                             android:gravity="center"
-                            android:textSize="25sp"/>
+                            android:text="66"
+                            android:textSize="25sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
-                    >
+                        android:layout_weight="3">
 
                         <lecho.lib.hellocharts.view.ColumnChartView
                             android:id="@+id/cal_column_chart"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" >
-                        </lecho.lib.hellocharts.view.ColumnChartView>
+                            android:layout_height="match_parent"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"></lecho.lib.hellocharts.view.ColumnChartView>
 
                     </LinearLayout>
 
@@ -246,22 +239,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:orientation="horizontal"
                     android:background="@color/background_white"
+                    android:orientation="horizontal"
                     android:weightSum="4">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
                             android:id="@+id/tv_Sleep"
-                            android:layout_gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="66"
+                            android:layout_gravity="center"
                             android:gravity="center"
-                            android:textSize="25sp"/>
+                            android:text="66"
+                            android:textSize="25sp" />
                     </LinearLayout>
 
                     <LinearLayout

@@ -1,5 +1,6 @@
 package com.example.kevin.health.Ui.sport;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
@@ -16,6 +18,10 @@ import android.widget.SeekBar;
 import com.example.kevin.health.R;
 import com.example.kevin.health.Ui.step.StepView;
 import com.example.kevin.health.base.BaseFragment;
+import com.example.kevin.health.databinding.FragmentSportBinding;
+
+import static android.databinding.DataBindingUtil.inflate;
+import static com.example.kevin.health.R.id.view;
 
 /**
  * Created by hyx on 2017/2/6.
@@ -29,6 +35,7 @@ public class SportFragment extends BaseFragment implements SportContract.View  {
     private  StepView stepView;
     private  EditText mEtMax;
     private Handler mHandler = new Handler();
+    private Button btnDeviceStatus ;
 
     public static SportFragment newInstance(){
         SportFragment fragment =new SportFragment();
@@ -39,13 +46,17 @@ public class SportFragment extends BaseFragment implements SportContract.View  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sport, container, false);
-        stepView= (StepView) view.findViewById(R.id.sv_step);
-        mSeekBar = (SeekBar)view.findViewById(R.id.seekBar);
-        mEtMax = (EditText)view.findViewById(R.id.et_max);
-        showStep();
+        FragmentSportBinding binding= DataBindingUtil.inflate(inflater,R.layout.fragment_sport,container,false);
+        stepView = binding.svStep;
+        mSeekBar = binding.seekBar;
+        mEtMax = binding.etMax;
+        btnDeviceStatus =binding.btnDeviceStatus;
+
+
+
+
         
-        return view;
+        return binding.getRoot();
     }
 
 
@@ -54,7 +65,13 @@ public class SportFragment extends BaseFragment implements SportContract.View  {
         super.onActivityCreated(savedInstanceState);
         presenter=new SportPresenter();
         presenter.start();
-       
+        showStep();
+        btnDeviceStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 
@@ -140,6 +157,10 @@ public class SportFragment extends BaseFragment implements SportContract.View  {
     public void onDetach() {
         super.onDetach();
         presenter.detachView();
+    }
+
+    private void  setDeviceStatus(String status){
+        btnDeviceStatus.setText(status);
     }
 }
 
